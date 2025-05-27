@@ -18,27 +18,26 @@ const NotifyForm = () => {
     if (!email) return;
 
     setIsLoading(true);
-    console.log("Tentative d'enregistrement de l'email:", email);
+    console.log("Envoi de l'inscription newsletter pour:", email);
 
     try {
-      const { data, error } = await supabase
-        .from('newsletter_subscriptions')
-        .insert([{ email: email }])
-        .select();
+      const { data, error } = await supabase.functions.invoke('send-newsletter-confirmation', {
+        body: { email: email }
+      });
 
       if (error) {
-        console.error("Erreur lors de l'enregistrement:", error);
+        console.error("Erreur lors de l'envoi:", error);
         toast({
           title: "Erreur",
           description: "Une erreur est survenue lors de l'inscription.",
           variant: "destructive",
         });
       } else {
-        console.log("Email enregistré avec succès:", data);
+        console.log("Inscription réussie:", data);
         setIsSubmitted(true);
         toast({
           title: "Inscription réussie !",
-          description: "Vous serez notifié dès l'ouverture du Club Créole.",
+          description: "Vérifiez votre email pour la confirmation. Vous serez notifié dès l'ouverture du Club Créole.",
         });
       }
     } catch (error) {
@@ -97,8 +96,11 @@ const NotifyForm = () => {
                 <h3 className="text-2xl font-bold text-creole-ocean mb-4">
                   Merci pour votre inscription !
                 </h3>
-                <p className="text-gray-600 text-lg">
-                  Vous recevrez un email dès que nous ouvrirons nos portes.
+                <p className="text-gray-600 text-lg mb-4">
+                  Un email de confirmation vient d'être envoyé à votre adresse.
+                </p>
+                <p className="text-gray-500">
+                  Vous recevrez une notification dès que nous ouvrirons nos portes.
                 </p>
               </div>
             )}

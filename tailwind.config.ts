@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Couleurs créoles personnalisées
+				creole: {
+					sunset: '#FF6B35',
+					ocean: '#0077BE',
+					coral: '#FF8C42',
+					palm: '#2E8B57',
+					sand: '#F4E4BC',
+					hibiscus: '#DC143C',
+					mango: '#FFAA44'
 				}
 			},
 			borderRadius: {
@@ -84,11 +95,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.7'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'pulse-slow': 'pulse-slow 3s infinite',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'tropical-gradient': 'linear-gradient(135deg, #FF6B35, #FFAA44, #0077BE)',
+				'sunset-gradient': 'linear-gradient(to right, #FF6B35, #FF8C42, #FFAA44)',
+				'ocean-gradient': 'linear-gradient(to bottom, #0077BE, #20B2AA)'
 			}
 		}
 	},

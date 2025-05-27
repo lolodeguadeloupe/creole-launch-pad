@@ -5,21 +5,51 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const NotifyForm = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
+    if (!email) return;
+
+    setIsLoading(true);
+    console.log("Tentative d'enregistrement de l'email:", email);
+
+    try {
+      const { data, error } = await supabase
+        .from('newsletter_subscriptions')
+        .insert([{ email: email }])
+        .select();
+
+      if (error) {
+        console.error("Erreur lors de l'enregistrement:", error);
+        toast({
+          title: "Erreur",
+          description: "Une erreur est survenue lors de l'inscription.",
+          variant: "destructive",
+        });
+      } else {
+        console.log("Email enregistré avec succès:", data);
+        setIsSubmitted(true);
+        toast({
+          title: "Inscription réussie !",
+          description: "Vous serez notifié dès l'ouverture du Club Créole.",
+        });
+      }
+    } catch (error) {
+      console.error("Erreur inattendue:", error);
       toast({
-        title: "Inscription réussie !",
-        description: "Vous serez notifié dès l'ouverture du Club Créole.",
+        title: "Erreur",
+        description: "Une erreur inattendue est survenue.",
+        variant: "destructive",
       });
-      console.log("Email soumis:", email);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -46,14 +76,16 @@ const NotifyForm = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    disabled={isLoading}
                     className="pl-12 py-4 text-lg border-2 border-gray-200 focus:border-creole-ocean rounded-xl"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-creole-ocean hover:bg-creole-ocean/90 text-white py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  disabled={isLoading}
+                  className="w-full bg-creole-ocean hover:bg-creole-ocean/90 text-white py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Je veux être notifié
+                  {isLoading ? "Inscription en cours..." : "Je veux être notifié"}
                 </Button>
                 <p className="text-sm text-gray-500 text-center">
                   Nous respectons votre vie privée. Aucun spam, promis !

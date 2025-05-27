@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import AboutSection from "../components/AboutSection";
 import NotifyForm from "../components/NotifyForm";

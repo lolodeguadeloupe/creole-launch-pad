@@ -53,7 +53,7 @@ const NotifyForm = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-creole-sunset to-creole-coral">
+    <section id="notify-section" className="py-20 bg-gradient-to-r from-creole-sunset to-creole-coral">
       <div className="container mx-auto px-6">
         <Card className="max-w-2xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl">
           <CardHeader className="text-center pb-8">

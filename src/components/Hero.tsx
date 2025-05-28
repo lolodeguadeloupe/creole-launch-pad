@@ -13,6 +13,16 @@ const Hero = () => {
     }
   };
 
+  const scrollToNotify = () => {
+    const notifySection = document.querySelector('#notify-section');
+    if (notifySection) {
+      notifySection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-tropical-gradient overflow-hidden">
       {/* Éléments décoratifs flottants */}
@@ -48,7 +58,11 @@ const Hero = () => {
           </div>
           
           <div className="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
-            <Button size="lg" className="bg-creole-sunset hover:bg-creole-coral text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <Button 
+              size="lg" 
+              onClick={scrollToNotify}
+              className="bg-creole-sunset hover:bg-creole-coral text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
               Être notifié du lancement
             </Button>
             <Button 

@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Music, Utensils, Users, Heart } from "lucide-react";
 
@@ -27,7 +26,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-creole-sand/20">
+    <section id="about-section" className="py-20 bg-gradient-to-b from-white to-creole-sand/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl font-bold text-creole-ocean mb-6">

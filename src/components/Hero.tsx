@@ -25,7 +25,7 @@ const Hero = () => {
               <h2 className="text-3xl font-semibold">Ouverture Prochaine</h2>
             </div>
             <p className="text-xl mb-6">
-              Préparez-vous à découvrir un espace unique dédié à la culture créole
+              Préparez-vous à découvrir un espace unique proposant des services et des promotions exclusives pour les membres du Club Créole.
             </p>
             <div className="flex items-center justify-center text-lg">
               <MapPin className="w-5 h-5 mr-2 text-creole-coral" />
@@ -43,7 +43,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-creole-ocean px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="border-2 border-white text-blue hover:bg-white hover:text-blue px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 backdrop-blur-sm"
             >
               En savoir plus
             </Button>

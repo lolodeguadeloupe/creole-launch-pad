@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-tropical-gradient overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-tropical-gradient overflow-hidden">
       {/* Éléments décoratifs flottants */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-creole-coral rounded-full opacity-20 animate-float"></div>
-      <div className="absolute top-40 right-20 w-16 h-16 bg-creole-hibiscus rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-creole-mango rounded-full opacity-25 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-40 right-20 w-16 h-16 bg-creole-hibiscus rounded-full opacity-30 animate-float" style={{
+      animationDelay: '1s'
+    }}></div>
+      <div className="absolute bottom-20 left-20 w-24 h-24 bg-creole-mango rounded-full opacity-25 animate-float" style={{
+      animationDelay: '2s'
+    }}></div>
       
       <div className="container mx-auto px-6 text-center text-white relative z-10">
         <div className="animate-fade-in">
@@ -33,24 +35,15 @@ const Hero = () => {
           </div>
           
           <div className="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
-            <Button 
-              size="lg" 
-              className="bg-creole-sunset hover:bg-creole-coral text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
+            <Button size="lg" className="bg-creole-sunset hover:bg-creole-coral text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
               Être notifié du lancement
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-blue hover:bg-white hover:text-blue px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 backdrop-blur-sm"
-            >
+            <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 backdrop-blur-sm text-slate-500">
               En savoir plus
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;

@@ -6,22 +6,22 @@ const AboutSection = () => {
     {
       icon: Music,
       title: "Musique & Culture",
-      description: "Découvrez les rythmes authentiques du zouk, kompa et autres sonorités créoles"
+      description: "Découvrez les concert , les soirées, les festivals, les événements culturels"
     },
     {
       icon: Utensils,
-      title: "Gastronomie",
-      description: "Savourez les saveurs uniques de la cuisine créole dans une ambiance chaleureuse"
+      title: "Restaurants",
+      description: "Découvrez les restaurants partenaires, les plats typiques, les spécialités culinaires"
     },
     {
       icon: Users,
       title: "Communauté",
-      description: "Rejoignez une communauté passionnée et partagez des moments inoubliables"
+      description: "Rejoignez une communauté passionnée et partagez des moments inoubliables avec les autres membres"
     },
     {
       icon: Heart,
       title: "Authenticité",
-      description: "Vivez l'expérience créole dans toute sa richesse et sa diversité"
+      description: "Vivez l'expérience créole dans toute sa richesse et sa diversité avec les autres membres"
     }
   ];
 
@@ -33,8 +33,9 @@ const AboutSection = () => {
             Une expérience créole unique
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Le Club Créole est bien plus qu'un simple lieu de rencontre. C'est un pont entre les îles 
-            et le continent, un espace où la culture créole s'épanouit dans toute sa splendeur.
+            Le Club Créole est une communauté vibrante qui rassemble passionnés et professionnels autour de la culture créole. 
+            À travers notre réseau de partenaires sélectionnés, nous vous offrons un ensemble de services exclusifs pour vivre 
+            pleinement l'expérience antillaise au quotidien.
           </p>
         </div>
         

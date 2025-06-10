@@ -33,9 +33,8 @@ const AboutSection = () => {
             Une expérience créole unique
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Le Club Créole est une communauté vibrante qui rassemble passionnés et professionnels autour de la culture créole. 
-            À travers notre réseau de partenaires sélectionnés, nous vous offrons un ensemble de services exclusifs pour vivre 
-            pleinement l'expérience antillaise au quotidien.
+            Club Créole vous permet de bénéficier de services privilégiés et de promotions exclusives grâce à notre réseau de partenaires sélectionnés.
+            Profitez d'avantages uniques pour vivre pleinement l'expérience "Club Créole" au meilleur prix.
           </p>
         </div>
         
@@ -62,13 +61,13 @@ const AboutSection = () => {
         </div>
         
         <div className="text-center bg-ocean-gradient rounded-3xl p-12 text-white">
-          <h3 className="text-3xl font-bold mb-6">Préparez-vous à l'aventure créole</h3>
+          <h3 className="text-3xl font-bold mb-6">Préparez-vous à l'aventure du Club Créole</h3>
           <p className="text-xl mb-8 opacity-90">
-            Nous préparons quelque chose d'exceptionnel pour vous faire vivre la magie des Antilles
+            Nous préparons quelque chose d'exceptionnel pour vous faire bénéficier de services privilégiés et de promotions exclusives grâce à notre réseau de partenaires sélectionnés.
           </p>
           <div className="flex justify-center space-x-8 text-sm">
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold">2024</div>
+              <div className="text-3xl font-bold">2025</div>
               <div className="opacity-75">Ouverture</div>
             </div>
             <div className="flex flex-col items-center">

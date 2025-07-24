@@ -23,6 +23,15 @@ const Footer = () => {
               <span>Fait avec</span>
               <Heart className="w-4 h-4 mx-2 text-creole-coral animate-pulse-slow" />
               <span>pour la communauté créole</span>
+              <span className="mx-2">|</span>
+              <a 
+                href="https://agencegwada.com"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="hover:text-creole-coral transition-colors duration-300"
+              >
+                Contacter le développeur
+              </a>
             </div>
             <p className="mt-4 text-sm opacity-60">
               © 2024 Club Créole. Tous droits réservés.
